@@ -35,6 +35,8 @@ namespace Tetris
 
         public bool GameOver { get; private set; }
 
+        public int Score { get; private set; }
+
         public GameState()
         {
             GameGrid = new GameGrid(22, 10);
@@ -103,7 +105,8 @@ namespace Tetris
                 GameGrid[p.Row, p.Column] = CurrentBlock.Id;
             }
 
-            GameGrid.ClearFullRows();
+            Score += GameGrid.ClearFullRows();
+
 
             if(IsGameOver())
             {
