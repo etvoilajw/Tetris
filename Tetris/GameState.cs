@@ -164,7 +164,7 @@ namespace Tetris
             return drop;
         }
 
-        private int BlockDropDistance()
+        public int BlockDropDistance()
         {
             int drop = GameGrid.Rows;
 
